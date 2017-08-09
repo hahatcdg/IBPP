@@ -1,0 +1,2 @@
+Position	TSS		Score
+132	ataaatgcttCaataa	16.4
