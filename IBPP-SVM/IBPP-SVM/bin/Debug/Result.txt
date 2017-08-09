@@ -1,0 +1,2 @@
+Position	TSS		Score
+101	tatgtatccgCtcatg	13.8

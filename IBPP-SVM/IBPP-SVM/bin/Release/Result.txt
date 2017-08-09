@@ -1,0 +1,2 @@
+Position	TSS		Score
+74	aattgtgagcGgataa	7.3
