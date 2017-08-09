@@ -12,6 +12,8 @@ The directory “IBPP” contains the tool that uses one of the “images” to 
 The “IBPP-SVM” uses several “images” to score the same sequence. Using a vector constituted by these scores, it applies support vector machine to predict promoter. To train the SVM model, training sets should be present in the directory “TrainSet”. In the “Pattern.txt” file, one or several “images” should be present, which determines the dimension of vectors.
 
 
+In the current version, we used sigma70 promoters of E. coli (downloaded from RegulonDB) to generate "images" and test the prediction tools. The analyzing of promoters from other species has not been tested.
+
 Sheng Wang
 
 Zhejiang University
