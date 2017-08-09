@@ -1,5 +1,5 @@
 # IBPP
-Image-based promoter prediction
+
 
 IBPP (Image-based promoter prediction) is a method used to detect transcriptional promoters. The program uses a collection of transcription start sites (TSSs) to generate an “image”. By matching a sequence with the “image”, the program can distinguish promoters from other sequences. The program is species specific, because the “image” is generated using TSSs from a certain species, such as E. coli. In order to predict promoters in other species, specific “image” should be generated using TSSs of that species.
 
