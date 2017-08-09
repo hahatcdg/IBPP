@@ -28,11 +28,16 @@ namespace 启动子预测_整合版
         {
             this.SeedingSize = this.InitialSeedingSize;
             if (FirstRound)
-            { Dirs = Directory.GetDirectories(Directory.GetCurrentDirectory()); }
+            {
+                this.Dirs = (from dir in Directory.GetDirectories(Environment.CurrentDirectory)
+                             where new DirectoryInfo(dir).Name.ToLower().StartsWith("output")
+                             orderby this.DirNumber(new DirectoryInfo(dir).Name) ascending
+                             select dir).ToArray();
+            }
             this.currentDir = Dirs[this.DirID];
-            if (!Directory.Exists(this.currentDir + "\\OutputFiles"))
-            { Directory.CreateDirectory(this.currentDir + "\\OutputFiles"); }
-            this.OutFilePath = this.currentDir + "\\OutputFiles";
+            if (!Directory.Exists(Path.Combine(Dirs[this.DirID], "OutputFiles")))
+            { Directory.CreateDirectory(Path.Combine(Dirs[this.DirID], "OutputFiles")); }
+            this.OutFilePath = Path.Combine(Dirs[this.DirID],"OutputFiles");
             this.DirID++;
         }
         void Initiate(string _fileName,string _NFileName)
@@ -382,6 +387,18 @@ namespace 启动子预测_整合版
             for (int i = 0; i < n; i++)
             { result += '-'; }
             return result;
+        }
+
+        int DirNumber(string name)
+        {
+            if (!name.StartsWith("Output")) { return 9999; }
+            string resultSTR = "";
+            foreach (char item in name)
+            {
+                if (char.IsNumber(item))
+                { resultSTR += item; }
+            }
+            return Convert.ToInt32(resultSTR);
         }
     }
 }

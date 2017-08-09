@@ -90,7 +90,7 @@ namespace IBPP
                     "Press any key to continue. \n"); }
                 this.GenerateSoftPatterns();
             }
-            catch(Exception e) { Console.WriteLine(e.Message);Console.ReadKey(); goto Repeat1; }            
+            catch(Exception e) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(e.Message);Console.ForegroundColor = ConsoleColor.Green; Console.ReadKey(); goto Repeat1; }            
         }
         List<double[]> AnalyzeGSeq2(string seq, List<string> SoftPattern)
         {
@@ -230,8 +230,6 @@ namespace IBPP
                     if (pattern[j] != '-' && query[j + i] == pattern[j]) {  currentScore++;}
                     else if(pattern[j]!='-') {currentScore -= this.Penalty; }
                 }
-                //Console.WriteLine("{0}\t{1}", ok, pen);
-                //Console.WriteLine(seq1); Console.WriteLine(seq2); Console.WriteLine();
                 if (currentScore > MaxScore) { MaxScore = currentScore; }
             }
             return MaxScore;

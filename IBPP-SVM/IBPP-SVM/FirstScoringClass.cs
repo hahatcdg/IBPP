@@ -70,7 +70,7 @@ namespace IBPP_SVM
                 }
                 if (this.InputSeq.Length < 1) { throw new Exception(); }
             }
-            catch { Console.WriteLine("\nSomething is wrong with the input sequence\n"); goto Repeat1; }
+            catch { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\nSomething is wrong with the input sequence\n");Console.ForegroundColor = ConsoleColor.Green; goto Repeat1; }
             StreamWriter OutWriter = new StreamWriter(Path.Combine(Environment.CurrentDirectory, this.fileCordinator.InputSequenceFile), false);
                 List<double[]> tempResult = this.AnalyzeGSeq2(this.InputSeq, this.SoftPatterns);
                 int window = this.SoftPatterns[0].Length;
