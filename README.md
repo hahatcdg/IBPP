@@ -10,3 +10,8 @@ The directory “ImageGeneration” contains the tool used to generate “images
 The directory “IBPP” contains the tool that uses one of the “images” to analyze any given sequence by matching with it. To use it, an “image” should be present in the file “Pattern.txt” which is in the same directory with “IBPP.exe”. 
 
 The “IBPP-SVM” uses several “images” to score the same sequence. Using a vector constituted by these scores, it applies support vector machine to predict promoter. To train the SVM model, training sets should be present in the directory “TrainSet”. In the “Pattern.txt” file, one or several “images” should be present, which determines the dimension of vectors.
+
+
+Sheng Wang
+Zhejiang University
+College of Life Sciences
